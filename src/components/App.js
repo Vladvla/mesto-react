@@ -26,16 +26,16 @@ function App() {
       setIsAddCardPopupOpen(!isAddCardPopupOpen);
    }
 
-   const [selectedCard, setSelectedCard] = useState({});
+   const [selectedCard, setSelectedCard] = useState({isImageOpen: false, link: '', name: '',});
     function handleCardClick() {
-      setSelectedCard(!selectedCard)
+      setSelectedCard(selectedCard)
     }
 
    function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsAddCardPopupOpen(false);
     setIsEditAvatarPopupOpen(false);
-    setSelectedCard(false);
+    setSelectedCard({isImageOpen: false});
    }
 
   return (
