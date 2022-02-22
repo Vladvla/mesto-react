@@ -51,7 +51,7 @@ function Main (props) {
       </section>
       <section className="elements">
       {cards.map((item) => {
-        return (<Card key={item._id} src={item.link} name={item.name} likes={item.likes.length} onCardClick={item.onCardClick} />)
+        return (<Card key={item._id} src={item.link} name={item.name} likes={item.likes.length} onCardClick={props.onCardClick} />)
       })}
       </section>
     </main>
