@@ -1,4 +1,3 @@
-import '../index.css';
 
 function Card (props) {
  
@@ -10,7 +9,7 @@ function Card (props) {
     //  Темплейт карточки 
         <article className="element">
           <button type="button" className="element__remove button" aria-label="Удалить карточку" onClick={props.onDeleteCard}></button>
-          <img className="element__pic" src={props.src} onClick={handleClick} alt="#"/>
+          <img className="element__pic" src={props.src} onClick={handleClick} alt={props.name}/>
          <div className="element__container">
             <h2 className="element__title" onClick={handleClick}>{props.name}</h2>
             <div className="element__like-container">

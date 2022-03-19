@@ -1,13 +1,12 @@
-import '../index.css';
 import Card from './Card.js';
 import { useEffect, useState } from 'react';
 import { api } from './utils/Api';
 
 function Main (props) {
 
-  const [userName, setUserName] = useState([]);
-  const [userDescription, setUserDescription] = useState([]);
-  const [userAvatar, setUserAvatar] = useState([]);
+  const [userName, setUserName] = useState("");
+  const [userDescription, setUserDescription] = useState("");
+  const [userAvatar, setUserAvatar] = useState("");
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -33,7 +32,8 @@ function Main (props) {
   },[])
 
   return(
-    <><main className="content">
+    <>
+    <main className="content">
       <section className="profile">
         <div className="profile__avatar-container" onClick={props.onEditAvatar}>
           <img className="profile__avatar" src={userAvatar} alt="Здесь расположен Ваш аватар." />
@@ -53,7 +53,7 @@ function Main (props) {
       })}
       </section>
     </main>
-      </>
+    </>
   )
 }
 

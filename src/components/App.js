@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import '../index.css';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import Main from './Main.js';
-// import PopupWithForm from './PopupWithForm.js';
 import EditAvatarPopup from './EditAvatarPopup.js';
 import EditProfilePopup from './EditProfilePopup.js';
 import AddCardPopup from './AddCardPopup.js';
@@ -26,29 +24,29 @@ function App() {
       setIsAddCardPopupOpen(!isAddCardPopupOpen);
    }
 
-   const [selectedCard, setSelectedCard] = useState({isImageOpen: false, link: '', name: '',});
-    function handleCardClick() {
-      setSelectedCard(selectedCard)
+   const [selectedCard, setSelectedCard] = useState(null);
+    function handleCardClick(card) {
+      setSelectedCard(card)
     }
 
    function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
     setIsAddCardPopupOpen(false);
     setIsEditAvatarPopupOpen(false);
-    setSelectedCard({isImageOpen: false});
+    setSelectedCard(false);
    }
 
   return (
   <>
     <div className="page">
-      {<Header></Header>}
+      {<Header/>}
       {<Main 
       onEditAvatar={handleEditAvatarClick} 
       onEditProfile={handleEditProfileClick}
       onAddPlace={handleAddCardClick}
       onSelectedCard={handleCardClick}
       />}
-      {<Footer></Footer>}
+      {<Footer/>}
       {<EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} />}
       {<EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} />}
       {<AddCardPopup isOpen={isAddCardPopupOpen} onClose={closeAllPopups} />}
