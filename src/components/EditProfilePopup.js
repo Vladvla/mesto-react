@@ -1,4 +1,3 @@
-import '../index.css';
 import PopupWithForm from './PopupWithForm.js';
 
 function EditProfilePopup (props) {

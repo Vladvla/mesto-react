@@ -1,6 +1,5 @@
 
 function ImagePopup (props) {
-  console.log(props)
   return(
     // {/* Увеличенная карточка  */}
     // {/* popup_opened */}
